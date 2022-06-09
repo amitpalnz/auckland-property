@@ -1,0 +1,11 @@
+POST http://localhost:4000/api/add
+Content-Type: application/json
+
+{
+  
+  "suburb": "Mt Wellington",
+  "priceperweek":"1900",
+  "bedrooms": 5,
+  "bathrooms": 2
+  
+}

@@ -1,0 +1,12 @@
+.align_container {
+  background-image: url("../Images/bannerHome.jpg");
+  width: auto;
+  height: 400px;
+  scale:fill;
+  margin-top: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center ;
+  margin-left:4em;
+  margin-right:4em;
+}

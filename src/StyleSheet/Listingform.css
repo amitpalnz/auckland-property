@@ -1,0 +1,54 @@
+.Listing_form {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin-left: 500px;
+  margin-top: 0px;
+  background-color: #D5788B;
+  color:black;
+  border-radius: 6px;
+}
+
+ h1{
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size:45px;
+  margin-top: 0px;
+}
+
+.Listing_form > input {
+  margin-bottom: 20px;
+  border-radius: 999px;
+  padding: 10px;
+}
+
+.Listing_form > select {
+  margin-bottom: 20px;
+  border-radius: 999px;
+  padding: 10px;
+}
+
+.Listing_form labels{
+  font-size: 250px;
+}
+
+.btn_listing{
+  padding:10px;
+  color:white;
+  font-size: medium;
+  font-weight: bold;
+  background-color: #BF163D;
+  margin-left: 150px;
+}
+
+.btn_listing:hover{
+  background-color: white;
+  color:#BF163D;
+  padding:8px 18px 8px 18px;
+  border-radius: 15px;
+}
+
+.Listing_container{
+  padding: 0px;
+  margin: 0px;
+}

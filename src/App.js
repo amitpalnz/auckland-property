@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Listingform from "./components/Listingform";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './components/Home';
+import ForSale from './components/ForSale';
+import ForRent from "./components/ForRent";
+import RentalList from "./RentalList";
+import Inprogress from "./components/Inprogress";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+              
+        <Routes>
+          <Route path="/" exact element ={<Home/>}/>
+          <Route path="/property/sale"  element ={<ForSale/>}/>
+          <Route path="/property/rent"  element ={<ForRent/>}/>
+          <Route path="/property/listing" element={<Listingform/>} />
+          <Route path="/quicksort/rental" element={<RentalList/>} />
+          <Route path="/property/contact" element={<Inprogress/>} />
+          <Route path="/property/faq" element={<Inprogress/>} />
+                                  
+        </Routes>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
+

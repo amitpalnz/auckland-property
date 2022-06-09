@@ -1,0 +1,25 @@
+
+POST http://localhost:4000/api/listing
+Content-Type: application/json
+
+{
+  "name": "Raj",
+  "idNumber":45612,
+  "phoneNumber":2102734023,
+  "email": "amit@gmail.com",
+  "garage": 4,
+  "sale_or_rent": "sale",
+  "suburb": "Mt Wellington",
+  "address": "2 elias court",
+  "price":"900",
+  "bedroomNumber": 5,
+  "bathroomNumber": 2,
+  "petOk": "true",
+  "available":"true",
+  "park":"true",
+  "supermarket":"true",
+  "school":"true",
+  "gym":"true",
+  "leisurecenter":"true",
+  "houseImage" :""
+}
