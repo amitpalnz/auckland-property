@@ -5,6 +5,7 @@ import "../StyleSheet/Searchbar.css";
 import SearchbarResults from "./SearchbarResults";
 
 const Searchbar = () => {
+
   return (
     <div>
       

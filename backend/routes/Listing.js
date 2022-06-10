@@ -1,8 +1,55 @@
 const express = require("express");
 const router = express.Router();
-//const Formidable = require("formidable");
+
+const multer = require('multer');
+const storage = multer.diskStorage({
+  destination:function(req,file,cb){
+    cb(null, './uploads/');
+  },
+  filename: function(req,file,cb){
+    cb(null, new Date().toISOString()+file.originalname);
+  }
+});
+const upload = multer({storage:storage});
 const Listing = require("../models/Listing.model");
 
+router.post("/api/listing", upload.single('houseImage'),(request, response, next) => {
+  console.log(request.file);
+  const HouseListing = new Listing({
+    name: request.body.name,
+    idNumber: request.body.idNumber,
+    phoneNumber:request.body.phoneNumber,
+    email: request.body.email,
+    garages: request.body.garages,
+    sale_or_rent: request.body.sale_or_rent,
+    suburb: request.body.suburb,
+    address: request.body.address,
+    price: request.body.price,
+    bedroomNumber: request.body.bedroomNumber,
+    bathroomNumber: request.body.bathroomNumber,
+    petOk: request.body.petOk,
+    available: request.body.available,
+    park: request.body.park,
+    supermarket: request.body.supermarket,
+    school: request.body.school,
+    gym: request.body.gym,
+    leisurecenter: request.body.leisurecenter
+    
+  });
+  
+HouseListing
+    .save()
+    .then((data) => {
+      response.json(data);
+    })
+    .catch((error) => {
+      response.json(error);
+    });
+});
+module.exports = router;
+
+
+/*
 router.post('/api/listing', async(request, response) => {
   const list =request.body;
   const newListing = new Listing(list);
@@ -11,6 +58,7 @@ router.post('/api/listing', async(request, response) => {
 });
 
 module.exports = router;
+*/
 /*
 router.post("/api/listing", async (request, response) => {
   const form = new Formidable.IncomingForm();
@@ -75,42 +123,10 @@ router.post("/api/listing", async (request, response) => {
 
 module.exports = router;
 */
-/*
-router.post("/api/listing", (request, response) => {
-  const HouseListing = new Listing({
-    name: request.body.name,
-    idNumber: request.body.idNumber,
-    phoneNumber:request.body.phoneNumber,
-    email: request.body.email,
-    garages: request.body.garages,
-    sale_or_rent: request.body.sale_or_rent,
-    suburb: request.body.suburb,
-    address: request.body.address,
-    price: request.body.price,
-    bedroomNumber: request.body.bedroomNumber,
-    bathroomNumber: request.body.bathroomNumber,
-    petOk: request.body.petOk,
-    available: request.body.available,
-    park: request.body.park,
-    supermarket: request.body.supermarket,
-    school: request.body.school,
-    gym: request.body.gym,
-    leisurecenter: request.body.leisurecenter,
-    houseImage: request.body.houseImage,
-  });
-  
-HouseListing
-    .save()
-    .then((data) => {
-      response.json(data);
-    })
-    .catch((error) => {
-      response.json(error);
-    });
-});
-*/
 
 
+
+// houseImage: request.body.houseImage,
 /*
   router.post("/api/listing", async (request, response) => {
     const form = new Formidable.IncomingForm();

@@ -3,11 +3,11 @@ POST http://localhost:4000/api/listing
 Content-Type: application/json
 
 {
-  "name": "Raj",
+  "name": "hello4",
   "idNumber":45612,
   "phoneNumber":2102734023,
   "email": "amit@gmail.com",
-  "garage": 4,
+  "garages": 4,
   "sale_or_rent": "sale",
   "suburb": "Mt Wellington",
   "address": "2 elias court",
