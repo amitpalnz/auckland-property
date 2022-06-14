@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Rental = require("../models/rental.model");
-//const quicksort = require('../../Quicksort');
+//const quicksort = require("../../Quicksort");
 
 router.route("/api").get((req, res) => {
   Rental.find()
@@ -9,6 +9,7 @@ router.route("/api").get((req, res) => {
     .then((rentals) => res.json(rentals))
     .catch((err) => res.status(400).json("Error: " + err));
 });
+
 
 router.post("/api/add", async (request, response) => {
   const rentuser = request.body;

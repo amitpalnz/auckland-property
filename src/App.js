@@ -19,7 +19,7 @@ const App = () => {
           <Route path="/property/listing" element={<Listingform/>} />
           <Route path="/quicksort/rental" element={<RentalList/>} />
           <Route path="/property/contact" element={<Inprogress/>} />
-          <Route path="/property/faq" element={<Inprogress/>} />
+          <Route path="/property/" element={<Inprogress/>} />
                                   
         </Routes>
       </Router>

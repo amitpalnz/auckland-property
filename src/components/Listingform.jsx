@@ -243,6 +243,9 @@ const Listingform = () => {
           </div>
         </form>
         <br/><br/>
+        <div>
+          <p>{FormData}</p>
+        </div>
       <Footer />
     </div>
   );

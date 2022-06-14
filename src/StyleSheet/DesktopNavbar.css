@@ -8,7 +8,7 @@
   justify-content: left;
   margin-bottom: 0px;
   padding-bottom: 0px;
-  
+   
 }
 
 .logo {
@@ -18,15 +18,15 @@
 
 .DesktopNav_centerContainer {
   display: flex;
-  justify-content: space-around;
+  justify-content: left;
   background-color: #BF163D;
   color:white;
-  margin-top: 5px;
-  margin-left: 75px;
+  margin-top: 3px;
+  margin-left: 25px;
   border-radius: 6px;
-  padding-top: 0px;
+  padding-top: 5px;
   width:80%;
-  height:40px;
+  height: 45px;
   margin-bottom: 0px;
 }
 
@@ -34,6 +34,13 @@
   margin-right: 5px;
   padding: 8px;
   margin-top: 10px;
+  align-items: center;
+  justify-items: center;
+}
+.link1 {
+  margin-right: 5px;
+  padding: 3px;
+  margin-top: 0px;
   align-items: center;
   justify-items: center;
 }
@@ -53,7 +60,7 @@
 .align_container {
   background-image: url("../Images/bannerHome.jpg");
   width: auto;
-  height: 400px;
+  height: 597px;
   scale:fill;
   margin-top: 5px;
   background-repeat: no-repeat;
@@ -61,4 +68,18 @@
   background-position:center ;
   margin-left:4em;
   margin-right:4em;
+}
+
+.nav_position{
+  display: flex;
+  width:750px;
+  margin-left: 2em;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav_position1{
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 5em;
 }

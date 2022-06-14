@@ -10,3 +10,33 @@
   margin-left:4em;
   margin-right:4em;
 }
+
+.map{
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin-left: 400px;
+  margin-top: 0px;
+  background-color: #D5788B;
+  color:black;
+  border-radius: 6px;
+  border:solid 1px grey;
+
+}
+
+.hpage{
+  
+  height:180px;
+  border:solid 1px grey;
+}
+
+.img_container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  padding:1px;
+  margin-top: 10px;
+  
+  width:100%
+  
+}
