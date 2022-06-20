@@ -14,13 +14,13 @@ const App = () => {
               
         <Routes>
           <Route path="/" exact element ={<Home/>}/>
-          <Route path="/property/sale"  element ={<ForSale/>}/>
+          <Route path="/property/commercial"  element={<Inprogress/>}/>
           <Route path="/property/rent"  element ={<ForRent/>}/>
           <Route path="/property/property-management" element={<Listingform/>} />
           <Route path="/quicksort/rental" element={<RentalList/>} />
           <Route path="/property/contact" element={<Inprogress/>} />
-          <Route path="/property/" element={<Inprogress/>} />
-                                  
+          <Route path="/property/body-corporate" element={<Inprogress/>} />
+          <Route path="/property/faq" element={<Inprogress/>} />                       
         </Routes>
       </Router>
     </div>
