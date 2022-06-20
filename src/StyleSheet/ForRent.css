@@ -46,3 +46,55 @@
     height: 200px;
   }
 }
+.rental_search{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  padding:1em;
+  margin-left: 4em;  
+
+}
+
+.image_display{
+  height:270px;
+  width:400px;
+  border-radius: 6px;
+  border: solid grey 1px;
+}
+
+.home_desc{
+  height:250px;
+  width:65%;
+  margin-left: 2em;
+  border-radius: 6px;
+}
+
+.home_title{
+  color:red;
+  font-size:x-large;
+  font-weight: bold;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.desc_line2{
+  font-size:large;
+  font-weight: bold;
+}
+
+.desc_line3{
+  font-size:large;
+  
+}
+
+span{
+  padding:.5em;
+  justify-content: space-evenly;
+}
+
+.rent_search{
+  align-items: center;
+  justify-content: center;
+  margin-left: 5em;
+}

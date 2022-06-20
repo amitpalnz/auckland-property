@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const rentalRouter = require('./routes/rental');
 const houseListingRoute = require('./routes/Listing');
 const houseFetchRoute = require('./routes/HouseFetch');
+const houseList = require('./routes/HouseList');
 const cors = require('cors')
 const dotenv = require('dotenv')
 
@@ -27,6 +28,8 @@ app.use(cors());
 app.use(houseListingRoute);
 app.use(houseFetchRoute);
 app.use(rentalRouter);
+app.use(houseList);
+
 
 app.listen(port,()=> {
   console.log('Server is up and running on port:', port);

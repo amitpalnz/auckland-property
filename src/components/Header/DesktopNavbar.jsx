@@ -9,12 +9,14 @@ const DesktopNavbar = () => {
     <div className="align_container1">
       <div className="DesktopNav_container">
         <div className="DesktopNav_leftContainer">
+        <Link className="links" to="/">
           <img src={Logo} alt="Companylogo" className="logo" />
+        </Link>
         </div>
 
         <div className="DesktopNav_centerContainer">
           <div className="nav_position">
-          <Link className="links" to="/">
+          <Link className="links" to="/property/rent">
             <h4 className="link">Rent</h4>
           </Link>
           <Link className="links" to="/property/commercial">

@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import "../StyleSheet/Listingform.css";
 import axios from "axios";
-import Navbar from './Header/Navbar';
-import Footer from './Footer';
+import Navbar from "./Header/Navbar";
+import Footer from "./Footer";
 
 const Listingform = () => {
   const [name, setName] = useState("");
-  const [idNumber, setIDnumber] = useState(0);
+  const [_id, setIDnumber] = useState(0);
   const [phoneNumber, setPhoneNumber] = useState(0);
-  const [email, setEmail] = useState("");
+  const [city, setcity] = useState("");
   const [garages, setGarages] = useState(0);
-  const [sale_or_rent, setSaleOrRent] = useState("");
+  const [descriptions, setdescriptions] = useState("");
   const [suburb, setSuburb] = useState("");
   const [address, setAddress] = useState("");
   const [price, setPrice] = useState(0);
@@ -27,14 +27,14 @@ const Listingform = () => {
 
   const listProperty = (e) => {
     e.preventDefault();
-    const url = "http://localhost:4000/api/listing";
+    const url = "http://localhost:4000/api/upload";
     const data = new FormData();
     data.append("name", name);
-    data.append("idNumber", parseInt(idNumber));
+    data.append("_id", parseInt(_id));
     data.append("phoneNumber", parseInt(phoneNumber));
-    data.append("email", email);
+    data.append("city", city);
     data.append("garages", parseInt(garages));
-    data.append("sale_or_rent", sale_or_rent);
+    data.append("descriptions", descriptions);
     data.append("suburb", suburb);
     data.append("address", address);
     data.append("price", parseInt(price));
@@ -57,17 +57,17 @@ const Listingform = () => {
       .catch((error) => {
         console.log(error);
       });
-      
   };
   return (
-    
+    <div>
+      <Navbar />
       <div className="Listing_container">
-        <Navbar />
         <form className="Listing_form">
           <h1>LIST YOUR PROPERTY</h1>
           <div>
-            <label>Name </label>
+            <label className="alignment"> Name : </label>
             <input
+              className="alignment1"
               type="text"
               placeholder="Enter you legal name"
               onChange={(e) => setName(e.target.value)}
@@ -76,8 +76,9 @@ const Listingform = () => {
             <br />
           </div>
           <div>
-            <label>Identity Number </label>
+            <label className="alignment">Identity Number : </label>
             <input
+              className="alignment1"
               type="text"
               placeholder="Enter you ID Number"
               onChange={(e) => setIDnumber(e.target.value)}
@@ -86,27 +87,27 @@ const Listingform = () => {
             <br />
           </div>
           <div>
-            <label>Phone Number </label>
+            <label className="alignment">Phone Number : </label>
             <input
               type="text"
-              placeholder="Enter in your phone number"
+              placeholder="Enter your phone number"
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
             <br />
             <br />
           </div>
           <div>
-            <label>Email Address </label>
+            <label className="alignment">City : </label>
             <input
-              type="email"
-              placeholder="Enter in your email address"
-              onChange={(e) => setEmail(e.target.value)}
+              type="text"
+              placeholder="Enter the city"
+              onChange={(e) => setcity(e.target.value)}
             />
             <br />
             <br />
           </div>
           <div>
-            <label>Number of garages </label>
+            <label className="alignment">Number of garages : </label>
             <select onChange={(e) => setGarages(e.target.value)}>
               <option>0</option>
               <option>1</option>
@@ -115,31 +116,37 @@ const Listingform = () => {
               <option>4</option>
             </select>
 
-            <label>Sale Or Rent </label>
-            <select onChange={(e) => setSaleOrRent(e.target.value)}>
-              <option>...</option>
-              <option>sale</option>
-              <option>rent</option>
-            </select>
+            <label className="alignment">Desciption : </label>
+            <input
+              className="aligndesc"
+              type="text"
+              placeholder="Enter the description"
+              onChange={(e) => setdescriptions(e.target.value)}
+            />
             <br />
             <br />
           </div>
-          <label>Suburb </label>
-          <input
-            type="text"
-            placeholder="Enter the Suburb"
-            onChange={(e) => setSuburb(e.target.value)}
-          />
-          <label>Address </label>
-          <input
-            type="text"
-            placeholder="Enter the address"
-            onChange={(e) => setAddress(e.target.value)}
-          />
-          
-          
           <div>
-            <label>House Price $: </label>
+            <label className="alignment">Suburb : </label>
+            <input
+              type="text"
+              placeholder="Enter the Suburb"
+              onChange={(e) => setSuburb(e.target.value)}
+            />
+            <br/><br/>
+          </div>
+          <div>
+            <label className="alignment">Address : </label>
+            <input
+              type="text"
+              placeholder="Enter the address"
+              onChange={(e) => setAddress(e.target.value)}
+            />
+            <br/><br/>
+          </div>
+
+          <div>
+            <label className="alignment">House Price $: </label>
             <input
               type="number"
               placeholder="Enter Price"
@@ -149,7 +156,7 @@ const Listingform = () => {
             <br />
           </div>
           <div>
-            <label>Number of Bed Rooms </label>
+            <label className="alignment">Number of Bed Rooms : </label>
             <select onChange={(e) => setBedRoomNumber(e.target.value)}>
               <option>0</option>
               <option>1</option>
@@ -159,7 +166,7 @@ const Listingform = () => {
               <option>5</option>
             </select>
 
-            <label>Number of Bath Rooms </label>
+            <label className="alignment">Number of Bath Rooms : </label>
             <select onChange={(e) => setBathRoomNumber(e.target.value)}>
               <option>0</option>
               <option>1</option>
@@ -171,14 +178,14 @@ const Listingform = () => {
             <br />
           </div>
           <div>
-            <label>Pet Ok </label>
+            <label className="alignment">Pet Ok : </label>
             <select onChange={(e) => setPetOk(e.target.value)}>
               <option>...</option>
               <option value={true}>YES</option>
               <option value={false}>NO</option>
             </select>
 
-            <label>Available </label>
+            <label className="alignment">Available : </label>
             <select onChange={(e) => setAvailable(e.target.value)}>
               <option>...</option>
               <option value={true}>YES</option>
@@ -188,35 +195,35 @@ const Listingform = () => {
             <br />
           </div>
           <div>
-            <label>Park </label>
+            <label className="alignment">Park : </label>
             <select onChange={(e) => setPark(e.target.value)}>
               <option>...</option>
               <option value={true}>YES</option>
               <option value={false}>NO</option>
             </select>
 
-            <label>Supermarket </label>
+            <label className="alignment">Supermarket : </label>
             <select onChange={(e) => setSupermarket(e.target.value)}>
               <option>...</option>
               <option value={true}>YES</option>
               <option value={false}>NO</option>
             </select>
 
-            <label>School </label>
+            <label className="alignment">School : </label>
             <select onChange={(e) => setSchool(e.target.value)}>
               <option>...</option>
               <option value={true}>YES</option>
               <option value={false}>NO</option>
             </select>
 
-            <label>Gym </label>
+            <label className="alignment">Gym : </label>
             <select onChange={(e) => setGym(e.target.value)}>
               <option>...</option>
               <option value={true}>YES</option>
               <option value={false}>NO</option>
             </select>
 
-            <label>Leisure Center </label>
+            <label className="alignment">Leisure Center : </label>
             <select onChange={(e) => setLeisurecenter(e.target.value)}>
               <option>...</option>
               <option value={true}>YES</option>
@@ -226,7 +233,7 @@ const Listingform = () => {
             <br />
           </div>
           <div>
-            <label>House Image </label>
+            <label className="alignment">House Image : </label>
             <input
               type="file"
               onChange={(e) => setHouseImage(e.target.files[0])}
@@ -235,17 +242,21 @@ const Listingform = () => {
             <br />
           </div>
           <div>
-            <button className="btn_listing" type="submit" onClick={listProperty}>
+            <button
+              className="btn_listing"
+              type="submit"
+              onClick={listProperty}
+            >
               LIST YOUR PROPERTY
             </button>
-            <br/><br/>
-            <a href='/'> Go to Home page</a>
+            <br />
+            <br />
+            <a href="/"> Go to Home page</a>
           </div>
         </form>
-        <br/><br/>
-        <div>
-          <p>{FormData}</p>
-        </div>
+        <br />
+        <br />
+      </div>
       <Footer />
     </div>
   );

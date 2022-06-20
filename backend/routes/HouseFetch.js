@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const House = require("../models/Listing.model");
 
-router.get("/api/sale", async (request, response) => {
+router.get("/property/commercial", async (request, response) => {
   await House.find({ "sale_or_rent": "sale" })
     .exec()
     .then((data) => {
@@ -12,8 +12,8 @@ router.get("/api/sale", async (request, response) => {
     });
 });
 
-router.get("/api/rent", async (request, response) => {
-  await House.find({ "sale_or_rent": "rent" })
+router.get("/property/rent", async (request, response) => {
+  await House.find({ })
     .exec()
     .then((data) => {
       response.status(200).json(data);

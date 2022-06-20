@@ -1,49 +1,149 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Navbar from './Header/Navbar';
-import Footer from './Footer';
+import Navbar from "./Header/Navbar";
+import Searchbar from "./Searchbar";
+import Footer from "./Footer";
 import "../StyleSheet/ForRent.css";
+import KingBedIcon from "@mui/icons-material/KingBed";
+import BathtubIcon from "@mui/icons-material/Bathtub";
+import GarageIcon from "@mui/icons-material/Garage";
+import PetsIcon from '@mui/icons-material/Pets';
+import ParkIcon from '@mui/icons-material/Park';
+import SchoolIcon from '@mui/icons-material/School';
+import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
+import SportsGymnasticsSharpIcon from '@mui/icons-material/SportsGymnasticsSharp';
+
 const ForRent = () => {
-  const url = "http://localhost:4000/api/rent";
-  const [houses, setHouses] = useState([]);
+  const url = "http://localhost:4000/api/upload";
+  const [data, setData] = useState([]);
   useEffect(() => {
     axios
       .get(url)
       .then((response) => {
-        setHouses(response.data);
+        setData(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
-  },[]);
+  }, []);
+  
   return (
     <div className="Container">
-    <Navbar />
-    <div className="listedHouses">
-      
-      {houses.map((houseRent)=>{
-        return(<div>
-              <br/>
-              <h3>NAME: {houseRent.name}</h3>
-              <h3>ID: {houseRent.idNumber}</h3>
-              <h3>PHONE: {houseRent.phoneNumber}</h3>
-              <h3>EMAIL: {houseRent.email}</h3>
-              <h3>GARAGES: {houseRent.garages}</h3>
-              <h3>SALE/RENT: {houseRent.sale_or_rent}</h3>
-              <h3>SUBURB: {houseRent.suburb}</h3>
-              <h3>ADDRESS: {houseRent.address}</h3>
-              <h3>PRICE: $ {houseRent.price} /Week </h3>
-              <h3>BEDROOMS: {houseRent.bedroomNumber}</h3>
-              <h3>BATHROOMS: {houseRent.bathroomNumber}</h3> 
-              <h3>IMAGE: {houseRent.houseImage}</h3>
-              <br/><br/>          
-        </div>)
-      })}
-    </div>
-    <br/><br/><br/><br/><br/><br/><br/><br/>
-      <Footer />
-  </div>
-  )
-}
+      <Navbar />
+      <div className="rent_search">
+      <Searchbar />
+      </div>
+      <div className="listedHouses1">
+        {data.map((singleData) => {
+          const base64String = new Buffer(
+            singleData.houseImage.data.data
+          ).toString("base64");
+          
+          let petStatus=false;
+          if(singleData.petOk ===true){
+            petStatus = <PetsIcon/>
+          } 
 
-export default ForRent
+          let supermarketStatus=false;
+          if(singleData.supermarket ===true){
+            supermarketStatus = <LocalGroceryStoreIcon/>
+          } 
+
+          let schoolStatus=false;
+          if(singleData.school ===true){
+            schoolStatus = <SchoolIcon/>
+          }
+
+          let parkStatus=false;
+          if(singleData.park ===true){
+            parkStatus = <ParkIcon/>
+          }
+
+          let gymStatus=false;
+          if(singleData.park ===true){
+            gymStatus = <SportsGymnasticsSharpIcon/>
+          }
+
+          let availableStatus=false;
+          if(singleData.available ===true){
+            availableStatus = "NOW"
+          }
+
+          return (
+           <div className="rental_search">
+              <br />
+              <div>
+                <img
+                  className="image_display"
+                  src={`data:image/jpg;base64,${base64String}`}
+                  alt="homeImage"
+                />
+              </div>
+              <div className="home_desc">
+                <div className="home_title">
+                {singleData.address}, {singleData.suburb}, {singleData.city}
+                </div>
+                <div className="desc_line2">
+                  <br/>
+                {singleData.suburb} - {singleData.bedroomNumber} Bedroom home
+                </div>
+                <div className="desc_line3">
+                <br/>
+                $ {singleData.price}/week, Available: {availableStatus}
+                </div>
+                <div>
+                <br/>
+                  <span>
+                {singleData.bedroomNumber} <KingBedIcon /> 
+                </span>
+                <span>
+                {singleData.bathroomNumber} <BathtubIcon />
+                </span>
+                <span>
+                {singleData.garages} <GarageIcon />
+                </span>
+                <span>
+                {petStatus}
+                </span>
+                <span>
+                {parkStatus}
+                </span>
+                <span>
+                {supermarketStatus}
+                </span>
+                <span>
+                {schoolStatus}
+                </span>
+                <span>
+                {gymStatus}
+                </span>       
+                </div>
+                <div>
+                <br/>
+                <p>{singleData.descriptions}</p>
+                </div>                
+                <div>
+                <a href="/"> More Info</a>
+                </div>
+                
+              </div>
+              <br />
+              <br />
+            </div>
+          );
+        })}
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Footer />
+    </div>
+  );
+};
+
+export default ForRent;
