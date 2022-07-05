@@ -64,8 +64,10 @@ const Home = () => {
       <div>
         <img src={Map} alt="Map Image" className="map" />
       </div>
-      
+      <br />
+      <br />
       <Footer />
+      <br />
     </div>
   );
 };
