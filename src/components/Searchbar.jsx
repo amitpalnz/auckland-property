@@ -198,12 +198,9 @@ const Searchbar = () => {
             <label for="leisure">Leisure </label>
             <input type="checkbox" name="Leisure" id="leisure"></input>
           </div>
+          <br/><br/>
         </div>
-        <div className="container_button">
-          <button className="search" onClick={SearchbarResults}>
-            Search <SearchIcon />
-          </button>
-        </div>
+        
       </div>
 
       <div className="listedHouses1">
@@ -329,3 +326,10 @@ if ((suburbData == "") || (suburbData =="Any") || (bedroomData=="Any")) {
               return singleData;
             } else
  */
+/*
+<div className="container_button">
+          <button className="search" onClick={SearchbarResults}>
+            Search <SearchIcon />
+          </button>
+        </div>
+*/        
