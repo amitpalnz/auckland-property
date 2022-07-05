@@ -35,6 +35,7 @@
 
 .Listing_form labels{
   font-size: 250px;
+  font-weight: bold;
 }
 
 .btn_listing{
@@ -66,6 +67,7 @@
 
 .alignment{
   margin-left: 30px;
+  font-weight: bold;
 }
 
 .alignment1{

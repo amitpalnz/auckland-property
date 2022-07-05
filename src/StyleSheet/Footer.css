@@ -3,9 +3,10 @@
   align-items: center;
   justify-content: space-evenly;
   background-color: #292D32;
-  width: 100%;
+  width: 90%;
   height: 15em;
   border-radius: 6px;
+  margin-left: 5em;
 }
 
 .Footer_category{

@@ -42,6 +42,7 @@ const ForRent = () => {
       <br />
       <br />
       <Footer />
+      <br />
     </div>
   );
 };

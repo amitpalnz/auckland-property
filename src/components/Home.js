@@ -67,7 +67,7 @@ const Home = () => {
       <br />
       <br />
       <Footer />
-      <br />
+      <br /><br />
     </div>
   );
 };
