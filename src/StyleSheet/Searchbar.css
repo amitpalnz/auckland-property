@@ -1,4 +1,9 @@
-.container{
+.main_container{
+  margin: 0em;
+  padding: 0em;
+}
+
+.container_search{
   width:65em;
   margin-top: 2em;
   margin-left: 10em;
@@ -7,6 +12,19 @@
   box-shadow: .5px .5px grey;
   color:black;
   background-color: #F4F4F4;
+}
+
+.Container{
+  margin: 0px;
+  padding: 0px;
+}
+
+.Container > h3 {
+  margin-top: 50px;
+  padding: 20px;
+  margin-left: 85px;
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .spinner{
@@ -57,3 +75,92 @@
   justify-content:center;
 }
 
+
+.listedHouses {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.img-conatiner {
+  margin-bottom: 10px;
+}
+
+.img-conatiner > img {
+  width: 400px;
+  height: 200px;
+}
+
+.loadingScreen {
+  width: 100%;
+}
+
+.House_priceAndDetails {
+  margin-bottom: 40px;
+}
+.House_price {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.House_snipDescription {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.rental_search{
+  margin-left: 3em;  
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  padding:1em;
+  
+
+}
+
+.image_display{
+  margin-left: 0 em;
+  height:270px;
+  width:400px;
+  border-radius: 6px;
+  border: solid grey 1px;
+}
+
+.home_desc{
+  height:250px;
+  width:65%;
+  margin-left: 2em;
+  border-radius: 6px;
+}
+
+.home_title{
+  color:red;
+  font-size:x-large;
+  font-weight: bold;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.desc_line2{
+  font-size:large;
+  font-weight: bold;
+}
+
+.desc_line3{
+  font-size:large;
+  
+}
+
+span{
+  padding:.5em;
+  justify-content: space-evenly;
+}
+
+.rent_search{
+  align-items: center;
+  justify-content: center;
+  margin-left: 1em;
+}

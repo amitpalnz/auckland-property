@@ -1,3 +1,14 @@
+const express = require("express");
+const router = express.Router();
+const Rental_Search = require("../models/Listing.model");
+//const quicksort = require("../../Quicksort");
+
+router.route("/api").get((req, res) => {
+  Rental_Search.find({})
+    .then((rentals) => res.json(rentals))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+/*
 const router = require("express").Router();
 const House = require("../models/Listing.model");
 
@@ -25,3 +36,4 @@ router.get("/property/rent", async (request, response) => {
 
 
 module.exports = router;
+*/

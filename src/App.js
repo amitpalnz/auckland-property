@@ -2,7 +2,6 @@ import React from "react";
 import Listingform from "./components/Listingform";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './components/Home';
-import ForSale from './components/ForSale';
 import ForRent from "./components/ForRent";
 import RentalList from "./RentalList";
 import Inprogress from "./components/Inprogress";
@@ -11,7 +10,6 @@ const App = () => {
   return (
     <div>
       <Router>
-              
         <Routes>
           <Route path="/" exact element ={<Home/>}/>
           <Route path="/property/commercial"  element={<Inprogress/>}/>
